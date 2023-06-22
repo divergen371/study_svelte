@@ -1,10 +1,13 @@
 <script>
   let color = "";
   let foods = [];
+  function changeColor() {
+    alert(color + "が選択されたときの処理");
+  }
 </script>
 
 <p>color:{color}</p>
-<select name="" id="" bind:value={color}>
+<select bind:value={color} on:change={changeColor}>
   <option value="" disabled>選択してください</option>
   <option value="red">赤</option>
   <option value="blue">青</option>
