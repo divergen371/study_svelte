@@ -1,9 +1,7 @@
 <script>
-  let message = undefined;
+  const messages = ["message1", "message2", "message3"];
 </script>
 
-{#if message}
-  <p>message:{message}</p>
-{:else}
-  <p>messgeにFalsyな値が代入されています</p>
-{/if}
+{#each messages as message}
+  <p>{message}</p>
+{/each}
