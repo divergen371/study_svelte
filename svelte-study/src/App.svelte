@@ -12,7 +12,7 @@
   }
 </script>
 
-{#each items as item}
+{#each items as item (item.id)}
   <p><input type="checkbox" />{item.name}</p>
 {/each}
 
