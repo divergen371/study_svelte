@@ -1,23 +1,13 @@
 <script>
-  let color = "";
-  let foods = [];
-  function changeColor() {
-    alert(color + "が選択されたときの処理");
+  // あえて値の型と変数名の関連性をあべこべにする
+  let text = 10;
+  let number = "10";
+  function checkType() {
+    console.log(text, typeof text);
+    console.log(number, typeof number);
   }
 </script>
 
-<p>color:{color}</p>
-<select bind:value={color} on:change={changeColor}>
-  <option value="" disabled>選択してください</option>
-  <option value="red">赤</option>
-  <option value="blue">青</option>
-  <option value="green">緑</option>
-</select>
-<hr />
-<p>food:{foods}</p>
-<select multiple bind:value={foods}>
-  <option value="" disabled>選択してください(複数可)</option>
-  <option value="breakfast">朝食</option>
-  <option value="lunch">昼食</option>
-  <option value="dinner">夕食</option>
-</select>
+<p>text:<input type="text" bind:value={text} /></p>
+<p>number:<input type="number" bind:value={number} /></p>
+<button on:click={checkType}>型チェック</button>
