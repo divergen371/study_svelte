@@ -1,18 +1,20 @@
 <script>
-  let isAgree = false;
-  let vegetables = [];
-  let size = "medium";
+  let color = "";
+  let foods = [];
 </script>
 
-<input type="checkbox" name="" id="" bind:checked={isAgree} />利用規約に同意する
-<input type="button" value="次へ" disabled={!isAgree} />
+<p>color:{color}</p>
+<select name="" id="" bind:value={color}>
+  <option value="" disabled>選択してください</option>
+  <option value="red">赤</option>
+  <option value="blue">青</option>
+  <option value="green">緑</option>
+</select>
 <hr />
-<p>vegetables:{vegetables}</p>
-<input type="checkbox" value="tomato" bind:group={vegetables} />tomato
-<input type="checkbox" value="carrot" bind:group={vegetables} />carrot
-<input type="checkbox" value="onion" bind:group={vegetables} />onion
-<hr />
-<p>size:{size}</p>
-<input type="radio" value="large" bind:group={size}>large
-<input type="radio" value="medium" bind:group={size}>medium
-<input type="radio" value="small" bind:group={size}>small
+<p>food:{foods}</p>
+<select multiple bind:value={foods}>
+  <option value="" disabled>選択してください(複数可)</option>
+  <option value="breakfast">朝食</option>
+  <option value="lunch">昼食</option>
+  <option value="dinner">夕食</option>
+</select>
