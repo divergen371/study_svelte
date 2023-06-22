@@ -1,11 +1,19 @@
 <script>
-  const messages = [
-    { id: 0, message: "message1" },
-    { id: 1, message: "message2" },
-    { id: 2, message: "message3" },
+  let items = [
+    { id: 0, name: "要素1" },
+    { id: 1, name: "要素2" },
+    { id: 2, name: "要素3" },
   ];
+
+  function deleteItem() {
+    const newItems = [...items];
+    newItems.splice(0, 1);
+    items = newItems;
+  }
 </script>
 
-{#each messages as message ,i (message.id)}
-  <p>[No {i + 1}]{message.message}</p>
+{#each items as item}
+  <p><input type="checkbox" />{item.name}</p>
 {/each}
+
+<button on:click={deleteItem}>削除</button>
