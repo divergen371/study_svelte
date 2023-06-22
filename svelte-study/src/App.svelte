@@ -1,12 +1,9 @@
 <script>
-  import Life from "./Life.svelte";
-  let isShow = false;
+  let message = undefined;
 </script>
 
-{#if isShow}
-  <Life />
+{#if message}
+  <p>message:{message}</p>
+{:else}
+  <p>messgeにFalsyな値が代入されています</p>
 {/if}
-
-<hr>
-<input type="checkbox" bind:checked={isShow}>
-チェックで出るん
